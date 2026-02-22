@@ -48,7 +48,7 @@ function App() {
       {/* ABOUT ME */}
       <section className="profile-card section">
         <div className="profile-flex">
-          <img src="/profile.jpg" alt="Klein Vincent De Guzman" className="avatar" />
+          <img src="/Image.jpg" alt="Klein Vincent De Guzman" className="avatar" />
           <div className="bio">
             <h2>Klein Vincent De Guzman</h2>
             <p>20 years old.</p>
