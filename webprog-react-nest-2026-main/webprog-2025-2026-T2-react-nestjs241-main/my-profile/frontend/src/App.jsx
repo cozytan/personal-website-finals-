@@ -66,8 +66,8 @@ function App() {
           <h3>Click to see my projects</h3>
           <div className="links-grid">
             <a href="https://github.com/cozytan" target="_blank" rel="noreferrer" className="p-link">GitHub</a>
-            <a href="#" className="p-link">Project Alpha</a>
-            <a href="#" className="p-link">Project Beta</a>
+            <a href="#" className="p-link">Coming soon</a>
+            <a href="#" className="p-link">Coming soon</a>
           </div>
         </section>
 
