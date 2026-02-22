@@ -10,6 +10,18 @@ function App() {
 
   useEffect(() => {
     fetchEntries();
+
+    // --- DIMDEN STARFIELD SCRIPT ---
+    // This creates the moving stars effect found on dimden.dev
+    const script = document.createElement('script');
+    script.src = "https://dimden.dev/scripts/stars.js"; 
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Cleanup script when the component unmounts
+    return () => {
+      document.body.removeChild(script);
+    }
   }, []);
 
   // GET Method
@@ -52,7 +64,7 @@ function App() {
           <div className="bio">
             <h2>Klein Vincent De Guzman</h2>
             <p>20 years old.</p>
-            <p>Full-stack developer engineering secure, responsive, and data-driven web applications.</p>
+            <p>Welcome to my personal web profile. I am from SF241. Bachelor of Science in Computer Science with a specialization in Cybersecurity and Forensics.</p>
           </div>
         </div>
       </section>
@@ -61,9 +73,10 @@ function App() {
       <section className="section">
         <h3>Click to see my projects</h3>
         <div className="links-grid">
-          <a href="#" className="p-link">Project Alpha</a>
-          <a href="#" className="p-link">Project Beta</a>
-          <a href="#" className="p-link">Project Gamma</a>
+          {/* Replace '#' with your actual Vercel or GitHub links */}
+          <a href="https://github.com/cozytan" target="_blank" rel="noreferrer" className="p-link">GitHub Profile</a>
+          <a href="https://webprog-react-nest-2026.vercel.app" target="_blank" rel="noreferrer" className="p-link">First Project</a>
+          <a href="#" className="p-link">Future Project</a>
         </div>
       </section>
 
@@ -92,11 +105,15 @@ function App() {
         </form>
 
         <div className="entry-list">
-          {entries.map((e, index) => (
-            <div key={index} className="entry">
-              <span><span className="user-name">[{e.name}]</span>: {e.message}</span>
-            </div>
-          ))}
+          {entries.length === 0 ? (
+            <div className="entry">No transmissions found...</div>
+          ) : (
+            entries.map((e, index) => (
+              <div key={index} className="entry">
+                <span><span className="user-name">[{e.name}]</span>: {e.message}</span>
+              </div>
+            ))
+          )}
         </div>
       </section>
 
